@@ -455,7 +455,6 @@ input, textarea, select { font-family: var(--font-body); }
   height: 160px;
 }
 
-.about-content { }
 .about-title {
   font-family: var(--font-heading);
   font-size: clamp(1.75rem, 2.8vw, 2.5rem);
@@ -825,7 +824,7 @@ input, textarea, select { font-family: var(--font-body); }
   /* Hero */
   .hero { min-height: auto; padding-bottom: 56px; }
   .hero-content { padding: 80px 0 48px; }
-  .hero-headline { font-size: clamp(2rem, 8vw, 2.75rem); }
+  .hero-headline { font-size: clamp(2.5rem, 9vw, 3.5rem); }
   .hero-sub { font-size: 1rem; }
   .hero-btns {
     flex-direction: column;
@@ -893,7 +892,7 @@ input, textarea, select { font-family: var(--font-body); }
 
 @media (max-width: 480px) {
   .container { padding: 0 14px; }
-  .hero-headline { font-size: clamp(1.875rem, 7vw, 2.25rem); }
+  .hero-headline { font-size: clamp(2.25rem, 9vw, 2.75rem); }
   .hero-eyebrow { font-size: 0.6875rem; }
   .stats-inner { grid-template-columns: 1fr 1fr; }
   .stat-num { font-size: 1.5rem; }
