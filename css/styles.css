@@ -802,7 +802,7 @@ input, textarea, select { font-family: var(--font-body); }
 .footer-legal a:hover { color: rgba(255,255,255,0.6); }
 
 /* ══════════════════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — mobile-first
 ══════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
@@ -818,41 +818,90 @@ input, textarea, select { font-family: var(--font-body); }
 }
 
 @media (max-width: 768px) {
-  .container { padding: 0 20px; }
+  .container { padding: 0 16px; }
   .nav-links, .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
 
-  .hero-headline { font-size: 2.5rem; }
-  .hero-btns { flex-direction: column; }
+  /* Hero */
+  .hero { min-height: auto; padding-bottom: 56px; }
+  .hero-content { padding: 80px 0 48px; }
+  .hero-headline { font-size: clamp(2rem, 8vw, 2.75rem); }
+  .hero-sub { font-size: 1rem; }
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero-btns .btn-amber,
+  .hero-btns .btn-white {
+    width: 100%;
+    justify-content: center;
+    padding: 17px 24px;
+    font-size: 1rem;
+  }
+  .hero-trust { gap: 12px; }
+  .trust-pill { font-size: 0.8125rem; }
 
+  /* Stats */
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
   .stat-item:nth-child(2) { border-right: none; }
+  .stat-item { padding: 24px 16px; }
+  .stat-num { font-size: 1.75rem; }
 
+  /* Services */
   .services { padding: 64px 0; }
-  .services-grid { grid-template-columns: 1fr; }
+  .services-header { margin-bottom: 40px; }
+  .services-grid { grid-template-columns: 1fr; gap: 16px; }
+  .service-img { height: 180px; }
 
+  /* About */
   .about { padding: 64px 0; }
   .about-photos { grid-template-columns: 1fr 1fr; }
   .about-photo-lg { height: 180px; }
+  .about-photo-sm { height: 130px; }
+  .about-cta { width: 100%; justify-content: center; }
 
+  /* Process */
   .process { padding: 64px 0; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-steps { grid-template-columns: 1fr; gap: 32px; }
+  .process-step { text-align: left; display: flex; gap: 20px; align-items: flex-start; }
+  .step-dot { flex-shrink: 0; margin-bottom: 0; }
 
+  /* Testimonials */
   .testimonials { padding: 64px 0; }
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; gap: 12px; background: none; }
+  .t-card { border-radius: var(--radius-md); }
 
+  /* Contact */
   .contact { padding: 64px 0; }
-  .form-box { padding: 32px 24px; }
-  .form-row { grid-template-columns: 1fr; }
+  .form-box { padding: 28px 20px; border-radius: var(--radius-md); }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
 
-  .footer-top { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+  .footer-legal { justify-content: center; }
+
+  /* Bump all touch targets */
+  .btn-amber, .btn-white, .about-cta, .btn-submit { min-height: 48px; }
+  .fi { padding: 14px 16px; font-size: 1rem; }
+  .nav-cta, .mobile-menu a { min-height: 48px; }
+  .mobile-menu a { padding: 16px 0; font-size: 1.125rem; }
+  .mobile-menu .btn { padding: 17px; }
+
 }
 
 @media (max-width: 480px) {
-  .hero-headline { font-size: 2rem; }
+  .container { padding: 0 14px; }
+  .hero-headline { font-size: clamp(1.875rem, 7vw, 2.25rem); }
+  .hero-eyebrow { font-size: 0.6875rem; }
   .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat-num { font-size: 1.5rem; }
   .about-photos { grid-template-columns: 1fr; }
-  .about-photo-lg { grid-column: 1; }
-  .process-steps { grid-template-columns: 1fr; }
+  .about-photo-lg { grid-column: 1; height: 220px; }
+  .about-photo-sm { height: 160px; }
+  .section-title { font-size: 1.625rem; }
+  .contact-title { font-size: 1.75rem; }
+  .t-quote { font-size: 0.9375rem; }
+  .process-step { flex-direction: column; gap: 12px; text-align: center; align-items: center; }
 }
